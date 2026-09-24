@@ -18,10 +18,10 @@ Then open http://localhost:3000. Edit files under `app/`, `components/`, or
 
 ```
 app/
-  page.tsx                    → the character select screen
-  characters/[slug]/page.tsx  → a single character's detail page
-  about/page.tsx              → bio + the contact form
-  illustrations/page.tsx      → standalone artwork gallery
+  page.tsx                     → home page: the illustrations gallery
+  character-select/page.tsx    → the character select screen
+  characters/[slug]/page.tsx   → a single character's detail page
+  about/page.tsx               → bio + the contact form
   layout.tsx, globals.css
 components/
   Navbar.tsx        → the site header (logo + nav, centered)

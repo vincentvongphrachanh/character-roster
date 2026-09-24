@@ -30,7 +30,7 @@ export default function CharacterDetailPage({ params }: { params: { slug: string
       <Navbar active="select" />
 
       <div className="px-5 sm:px-12 pt-5">
-        <Link href="/" className="inline-flex items-center gap-2 text-[13px] text-black/55 hover:text-black">
+        <Link href="/character-select" className="inline-flex items-center gap-2 text-[13px] text-black/55 hover:text-black">
           ‹ Back to roster
         </Link>
       </div>

@@ -30,10 +30,10 @@ export default function Navbar({ active }: { active: NavKey }) {
           <span className="font-display font-bold text-sm tracking-[0.25em]">XMIMISO</span>
         </Link>
         <nav className="flex gap-5 sm:gap-9 mt-4">
-          <Link href="/illustrations" className={linkClass("illustrations")}>
+          <Link href="/" className={linkClass("illustrations")}>
             Illustrations
           </Link>
-          <Link href="/" className={linkClass("select")}>
+          <Link href="/character-select" className={linkClass("select")}>
             Character Select
           </Link>
           <Link href="/about" className={linkClass("about")}>
