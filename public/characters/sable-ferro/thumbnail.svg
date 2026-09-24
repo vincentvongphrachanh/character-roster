@@ -1,0 +1,8 @@
+<svg viewBox="0 0 520 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="sable-ferro thumbnail placeholder">
+  <defs><linearGradient id="gthumb-sable-ferro" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c48fe0"/><stop offset="100%" stop-color="#4a1c5a"/></linearGradient></defs>
+  <ellipse cx="260" cy="560" rx="190" ry="120" fill="#200d27" opacity="0.9"/>
+  <path d="M260 60 C 150 60 110 170 130 280 C 145 360 190 420 200 470 L320 470 C330 420 375 360 390 280 C 410 170 370 60 260 60 Z" fill="url(#gthumb-sable-ferro)"/>
+  <circle cx="200" cy="250" r="10" fill="#0f0713"/>
+  <circle cx="320" cy="250" r="10" fill="#0f0713"/>
+  <text x="260" y="600" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0f0713" opacity="0.55">PLACEHOLDER ARTWORK</text>
+</svg>

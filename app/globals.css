@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+
+  --char-bg: #0c0b10;
+  --char-accent: #d8d3c7;
+  --char-secondary: #1c1a22;
+  --char-text: #f3f1ec;
+}
+
+html,
+body {
+  background: var(--char-bg);
+  color: var(--char-text);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+:focus-visible {
+  outline: 2px solid var(--char-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
