@@ -26,7 +26,7 @@ export default function Navbar({ active }: { active: NavKey }) {
       </div>
       <div className="flex flex-col items-center pt-1 pb-4 px-5">
         <Link href="/" className="flex flex-col items-center gap-2">
-          <Image src="/brand/logo.svg" alt="xmimiso logo" width={72} height={72} priority />
+          <Image png="/brand/logo.png" alt="xmimiso logo" width={72} height={72} priority />
           <span className="font-display font-bold text-sm tracking-[0.25em]">XMIMISO</span>
         </Link>
         <nav className="flex gap-5 sm:gap-9 mt-4">
