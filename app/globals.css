@@ -3,17 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+  /* One clean typeface for the whole site. Figtree is a free font with
+     the same simple, geometric feel as the font on sonialai.com. */
+  --font-display: "Figtree Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Figtree Variable", "Helvetica Neue", Arial, sans-serif;
 
-  /* Site-wide: white background, near-black text on every page.
+  /* Site-wide: white background, black text on every page.
      --char-accent still varies per character and is used sparingly
      (a border, an underline, a small highlight) -- never as a
-     full background fill anymore. */
+     full background fill. */
   --char-bg: #ffffff;
-  --char-accent: #141414;
+  --char-accent: #000000;
   --char-secondary: #f2f1ee;
-  --char-text: #141414;
+  --char-text: #000000;
 }
 
 html,
@@ -21,6 +23,9 @@ body {
   background: var(--char-bg);
   color: var(--char-text);
   font-family: var(--font-body);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-display {

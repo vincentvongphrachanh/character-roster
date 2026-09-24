@@ -8,41 +8,32 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar active="about" />
-      <div className="max-w-[640px] mx-auto px-5 sm:px-12 pt-10 pb-24">
-        <p className="text-sm mb-2 text-black/50">ABOUT THE ARTIST</p>
-        <h1 className="font-display font-extrabold uppercase text-[clamp(34px,6vw,54px)] mb-5 text-black">
+      <main className="max-w-[640px] mx-auto px-5 sm:px-8 pt-14 md:pt-20 pb-28">
+        <h1 className="text-[32px] md:text-[38px] font-medium leading-tight tracking-[0.01em] mb-6">
           Placeholder Artist Name
         </h1>
-        <p className="leading-relaxed mb-5 text-black/65">
-          This is prototype biography copy. The artist works primarily in semi-realistic original
-          character design — developing outfits, personalities, and visual identities for
-          characters that don&rsquo;t belong to any single world or style. Replace this paragraph
-          with the real artist bio.
-        </p>
-        <p className="leading-relaxed mb-6 text-black/65">
-          Specialties include costume and silhouette design, expressive portraiture, and building
-          cohesive visual identities for original characters across fantasy, modern, and
-          historical settings.
-        </p>
-        <div className="flex flex-wrap gap-2 mb-6">
-          {["Character Design", "Digital Painting", "Costume Design", "Portraiture", "Procreate / Photoshop", "Clip Studio Paint"].map(
-            (tag) => (
-              <span key={tag} className="text-[12.5px] px-3 py-1.5 rounded-sm border border-black/15 text-black/60">
-                {tag}
-              </span>
-            )
-          )}
+        <div className="space-y-5 text-[17px] leading-[1.7] text-black/80">
+          <p>
+            This is prototype biography copy. The artist works primarily in semi-realistic original
+            character design — developing outfits, personalities, and visual identities for
+            characters that don&rsquo;t belong to any single world or style. Replace this paragraph
+            with the real artist bio.
+          </p>
+          <p>
+            Specialties include costume and silhouette design, expressive portraiture, and building
+            cohesive visual identities for original characters across fantasy, modern, and
+            historical settings.
+          </p>
         </div>
-        <div className="mb-14">
-          <SocialIcons size={19} />
+        <div className="mt-7 -ml-2">
+          <SocialIcons />
         </div>
 
-        <div className="border-t border-black/10 pt-12">
-          <p className="text-sm mb-2 text-black/50">GET IN TOUCH</p>
-          <h2 className="font-display font-bold uppercase text-2xl mb-6 text-black">Contact</h2>
+        <section className="mt-16 pt-14 border-t border-black/10">
+          <h2 className="text-[26px] font-medium tracking-[0.01em] mb-8">Contact</h2>
           <ContactForm />
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }

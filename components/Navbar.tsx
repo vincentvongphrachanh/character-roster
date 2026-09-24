@@ -1,41 +1,57 @@
 import Link from "next/link";
-import { logoHeight, logoSrc } from "@/lib/site";
+import { logoHeight, logoHeightMobile, logoSrc, showSiteName, siteName } from "@/lib/site";
 import SocialIcons from "./SocialIcons";
 
 export type NavKey = "illustrations" | "select" | "about";
 
+const links: { key: NavKey; href: string; label: string }[] = [
+  { key: "illustrations", href: "/", label: "Illustrations" },
+  { key: "select", href: "/character-select", label: "Character Select" },
+  { key: "about", href: "/about", label: "About" },
+];
+
 /**
- * Site header. The logo file and its size are set in lib/site.ts.
+ * Site header: social icons on the left, the logo centered, and the
+ * page links centered underneath. Logo file and size live in lib/site.ts.
  */
 export default function Navbar({ active }: { active: NavKey }) {
-  const linkClass = (key: NavKey) =>
-    `text-[13px] tracking-wide pb-1 border-b transition-colors ${
-      active === key
-        ? "text-black border-black"
-        : "text-black/50 border-transparent hover:text-black"
-    }`;
+  const logoSize = `clamp(${logoHeightMobile}px, 10vw, ${logoHeight}px)`;
 
   return (
-    <header className="w-full bg-white text-black shrink-0">
-      <div className="flex items-center px-5 sm:px-12 pt-4">
+    <header
+      className="relative w-full bg-white text-black shrink-0 pt-5 md:pt-12 pb-2"
+      style={{ "--logo-h": logoSize } as React.CSSProperties}
+    >
+      {/* On wide screens the icons sit level with the middle of the logo. */}
+      <div className="px-4 md:px-0 md:absolute md:left-[26px] md:top-12 md:h-[var(--logo-h)] md:flex md:items-center">
         <SocialIcons />
       </div>
-      <div className="flex flex-col items-center pt-1 pb-4 px-5">
-        <Link href="/" className="flex flex-col items-center gap-2">
+
+      <div className="flex flex-col items-center px-5 mt-2 md:mt-0">
+        <Link href="/" aria-label={`${siteName} home`} className="block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoSrc} alt="xmimiso logo" style={{ height: logoHeight, width: "auto" }} />
-          <span className="font-display font-bold text-sm tracking-[0.25em]">XMIMISO</span>
+          <img src={logoSrc} alt={`${siteName} logo`} style={{ height: "var(--logo-h)", width: "auto" }} />
         </Link>
-        <nav className="flex gap-5 sm:gap-9 mt-4">
-          <Link href="/" className={linkClass("illustrations")}>
-            Illustrations
-          </Link>
-          <Link href="/character-select" className={linkClass("select")}>
-            Character Select
-          </Link>
-          <Link href="/about" className={linkClass("about")}>
-            About
-          </Link>
+        {showSiteName && (
+          <span className="mt-3 text-[18px] tracking-[0.2em] uppercase">{siteName}</span>
+        )}
+
+        <nav className="flex flex-wrap justify-center gap-x-8 sm:gap-x-10 gap-y-2 mt-7 md:mt-9">
+          {links.map((link) => {
+            const isActive = active === link.key;
+            return (
+              <Link
+                key={link.key}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`text-[16px] tracking-[0.04em] text-black underline-offset-[6px] decoration-1 transition-colors ${
+                  isActive ? "underline" : "no-underline hover:underline"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+// Figtree is served from this project (installed as a package), not from
+// Google, so it always loads -- including when you run the site locally.
+import "@fontsource-variable/figtree";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "xmimiso — Original Character Portfolio",
-  description:
-    "An interactive, fighting-game-inspired character select experience showcasing original character designs.",
+  title: "xmimiso",
+  description: "Illustrations and original character designs by xmimiso.",
 };
 
 export default function RootLayout({
@@ -14,18 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );

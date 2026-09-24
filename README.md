@@ -49,8 +49,11 @@ scripts/
 2. That's it. If you'd rather keep a different filename, open
    `lib/site.ts` and change `logoSrc` to match it exactly,
    capital letters included.
-3. To make the logo bigger or smaller, change `logoHeight` in the
-   same file.
+3. To make the logo bigger or smaller, change `logoHeight` (wide
+   screens) and `logoHeightMobile` (phones) in the same file.
+4. Crop away empty transparent space around the logo first. The
+   height setting covers the whole image, so padding makes the
+   visible logo look smaller.
 
 On Windows, turn on File Explorer → View → Show → File name
 extensions, so you can see whether a file is really `logo.png` and
@@ -96,8 +99,13 @@ visitors see when the site loads.
 
 Open `lib/illustrations.ts`, copy an existing entry, give it a new
 `id`, `name`, optional `note`, and an `image` path pointing at a file
-you've added under `public/illustrations/`. It appears in the grid
-on `/illustrations` automatically — no layout changes needed.
+you've added under `public/illustrations/`. It appears in the gallery
+on the home page automatically. The site reads each image's real
+shape while it builds, so tall and wide pieces are both shown whole,
+never cropped. Leave `name` empty ("") to show no caption.
+
+For faster loading, export web copies of very large files (around
+3000–4000px on the long side) instead of full print-size originals.
 
 ## Replacing the placeholder art
 
