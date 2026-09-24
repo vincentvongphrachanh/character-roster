@@ -49,7 +49,7 @@ export default function CharacterDetailPage({ params }: { params: { slug: string
         <div className="relative grid grid-cols-1 md:grid-cols-[minmax(260px,38%)_1fr] items-center gap-6 px-5 sm:px-12 pt-6 pb-10 min-h-[78vh] overflow-hidden">
           <div
             className="absolute -inset-[10%] pointer-events-none"
-            style={{ background: `radial-gradient(60% 60% at 65% 45%, var(--char-secondary) 0%, transparent 70%)` }}
+            style={{ background: `radial-gradient(60% 60% at 65% 45%, var(--char-secondary) 0%, transparent 65%)`, opacity: 0.4 }}
           />
           <div className="relative z-[2] order-2 md:order-1">
             <div className="text-[15px] mb-2" style={{ color: "var(--char-accent)" }}>

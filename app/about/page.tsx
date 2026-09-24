@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import SocialIcons from "@/components/SocialIcons";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = { title: "About — Roster" };
 
@@ -6,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen" style={{ background: "#0c0b10", color: "#f3f1ec" }}>
       <Navbar active="about" />
-      <div className="max-w-[640px] mx-auto px-5 sm:px-12 pt-32 pb-20">
+      <div className="max-w-[640px] mx-auto px-5 sm:px-12 pt-32 pb-24">
         <p className="text-sm mb-2" style={{ color: "rgba(243,241,236,0.62)" }}>
           ABOUT THE ARTIST
         </p>
@@ -24,7 +26,7 @@ export default function AboutPage() {
           cohesive visual identities for original characters across fantasy, modern, and
           historical settings.
         </p>
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6">
           {["Character Design", "Digital Painting", "Costume Design", "Portraiture", "Procreate / Photoshop", "Clip Studio Paint"].map(
             (tag) => (
               <span
@@ -37,9 +39,17 @@ export default function AboutPage() {
             )
           )}
         </div>
-        <p style={{ color: "rgba(243,241,236,0.62)" }}>
-          Portfolio and résumé links can be added here once supplied.
-        </p>
+        <div className="mb-14">
+          <SocialIcons size={19} />
+        </div>
+
+        <div className="border-t pt-12" style={{ borderColor: "rgba(243,241,236,0.14)" }}>
+          <p className="text-sm mb-2" style={{ color: "rgba(243,241,236,0.62)" }}>
+            GET IN TOUCH
+          </p>
+          <h2 className="font-display font-bold uppercase text-2xl mb-6">Contact</h2>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

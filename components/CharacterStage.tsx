@@ -23,7 +23,8 @@ export default function CharacterStage({
       <div
         className="absolute -inset-[10%] pointer-events-none transition-[background] duration-700"
         style={{
-          background: `radial-gradient(60% 60% at 65% 45%, var(--char-secondary) 0%, transparent 70%)`,
+          background: `radial-gradient(60% 60% at 65% 45%, var(--char-secondary) 0%, transparent 65%)`,
+          opacity: 0.4,
         }}
       />
 

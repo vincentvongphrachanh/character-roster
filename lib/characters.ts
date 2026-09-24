@@ -29,10 +29,10 @@ export const characters: Character[] = [
     thumbnail: "/characters/kestrel-vane/thumbnail.svg",
     mainArtwork: "/characters/kestrel-vane/main.svg",
     theme: {
-      backgroundColor: "#2b1710",
-      accentColor: "#e0a458",
-      secondaryColor: "#5c2f1a",
-      textColor: "#f6ede0",
+      backgroundColor: "#3a332c",
+      accentColor: "#b8a48a",
+      secondaryColor: "#4a4038",
+      textColor: "#f3efe9",
     },
     gallery: {
       finalArtwork: [
@@ -61,10 +61,10 @@ export const characters: Character[] = [
     thumbnail: "/characters/ondine-marchetti/thumbnail.svg",
     mainArtwork: "/characters/ondine-marchetti/main.svg",
     theme: {
-      backgroundColor: "#0c2733",
-      accentColor: "#5fd0d6",
-      secondaryColor: "#134a54",
-      textColor: "#eaf7f8",
+      backgroundColor: "#2b3336",
+      accentColor: "#8fb0b3",
+      secondaryColor: "#3c4749",
+      textColor: "#eef3f3",
     },
     gallery: {
       finalArtwork: [
@@ -98,10 +98,10 @@ export const characters: Character[] = [
     thumbnail: "/characters/sable-ferro/thumbnail.svg",
     mainArtwork: "/characters/sable-ferro/main.svg",
     theme: {
-      backgroundColor: "#231029",
-      accentColor: "#c48fe0",
-      secondaryColor: "#40174d",
-      textColor: "#f4e9f7",
+      backgroundColor: "#322c35",
+      accentColor: "#a894ad",
+      secondaryColor: "#453e49",
+      textColor: "#f1eef2",
     },
     gallery: {
       finalArtwork: ["/characters/sable-ferro/final-1.svg"],
@@ -126,10 +126,10 @@ export const characters: Character[] = [
     thumbnail: "/characters/juno-halcyon/thumbnail.svg",
     mainArtwork: "/characters/juno-halcyon/main.svg",
     theme: {
-      backgroundColor: "#180a24",
-      accentColor: "#d4f24c",
-      secondaryColor: "#5c1a6b",
-      textColor: "#f3edf9",
+      backgroundColor: "#2c2c33",
+      accentColor: "#a7ad8a",
+      secondaryColor: "#423f4c",
+      textColor: "#f0eff2",
     },
     gallery: {
       finalArtwork: [
@@ -160,10 +160,10 @@ export const characters: Character[] = [
     thumbnail: "/characters/percival-doyle/thumbnail.svg",
     mainArtwork: "/characters/percival-doyle/main.svg",
     theme: {
-      backgroundColor: "#14200f",
-      accentColor: "#c9a24b",
-      secondaryColor: "#26401b",
-      textColor: "#f1efe4",
+      backgroundColor: "#2b2e28",
+      accentColor: "#b3a37e",
+      secondaryColor: "#3a3d33",
+      textColor: "#f0efe8",
     },
     gallery: {
       finalArtwork: ["/characters/percival-doyle/final-1.svg"],
@@ -189,10 +189,10 @@ export const characters: Character[] = [
     thumbnail: "/characters/rhea-solheim/thumbnail.svg",
     mainArtwork: "/characters/rhea-solheim/main.svg",
     theme: {
-      backgroundColor: "#101820",
-      accentColor: "#bcd6e0",
-      secondaryColor: "#25404d",
-      textColor: "#eef6f8",
+      backgroundColor: "#262b2e",
+      accentColor: "#aab7bd",
+      secondaryColor: "#383f43",
+      textColor: "#eef1f2",
     },
     gallery: {
       finalArtwork: [
