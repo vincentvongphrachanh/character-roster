@@ -1,2 +1,0 @@
-# character-roster
-mimi portfolio
