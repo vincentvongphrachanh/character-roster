@@ -24,7 +24,7 @@ export default function RosterStrip({
 
   return (
     <div className="relative z-10 px-5 sm:px-12 pb-[calc(20px+env(safe-area-inset-bottom,0px))] pt-4">
-      <p className="text-[11.5px] tracking-wide text-[var(--char-text)]/60 mb-1.5 px-0.5">
+      <p className="text-[11.5px] tracking-wide text-black/50 mb-1.5 px-0.5">
         Browse the roster — click, scroll, swipe, or use ← →
       </p>
       <div
@@ -43,14 +43,14 @@ export default function RosterStrip({
             className={`relative flex-none w-20 h-20 rounded overflow-hidden border-2 transition-all duration-200 ${
               i === currentIndex
                 ? "opacity-100 -translate-y-1.5 scale-105 shadow-lg"
-                : "opacity-70 hover:opacity-100 hover:-translate-y-1"
+                : "opacity-80 hover:opacity-100 hover:-translate-y-1"
             }`}
             style={{
-              borderColor: i === currentIndex ? "var(--char-accent)" : "transparent",
+              borderColor: i === currentIndex ? "var(--char-accent)" : "rgba(0,0,0,0.12)",
               background: "var(--char-secondary)",
             }}
           >
-            <span className="absolute top-1 left-1.5 font-display font-bold text-[11px] text-white/85 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] z-10">
+            <span className="absolute top-1 left-1 font-display font-bold text-[10px] px-1 rounded-sm bg-white/85 text-black z-10">
               {String(i + 1).padStart(2, "0")}
             </span>
             <Image

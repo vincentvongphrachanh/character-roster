@@ -6,10 +6,14 @@
   --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
   --font-body: "Manrope", system-ui, -apple-system, sans-serif;
 
-  --char-bg: #0c0b10;
-  --char-accent: #d8d3c7;
-  --char-secondary: #1c1a22;
-  --char-text: #f3f1ec;
+  /* Site-wide: white background, near-black text on every page.
+     --char-accent still varies per character and is used sparingly
+     (a border, an underline, a small highlight) -- never as a
+     full background fill anymore. */
+  --char-bg: #ffffff;
+  --char-accent: #141414;
+  --char-secondary: #f2f1ee;
+  --char-text: #141414;
 }
 
 html,

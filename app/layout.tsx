@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Roster — Original Character Portfolio",
+  title: "xmimiso — Original Character Portfolio",
   description:
     "An interactive, fighting-game-inspired character select experience showcasing original character designs.",
 };

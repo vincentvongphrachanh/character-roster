@@ -24,16 +24,12 @@ export default function CharacterSelectPage() {
     [index]
   );
 
-  // Background + accent color transition on the whole page shell
+  // Only the accent color is character-specific now; background stays white.
   useEffect(() => {
     const root = document.documentElement;
-    root.style.setProperty("--char-bg", character.theme.backgroundColor);
     root.style.setProperty("--char-accent", character.theme.accentColor);
-    root.style.setProperty("--char-secondary", character.theme.secondaryColor ?? "#1c1a22");
-    root.style.setProperty("--char-text", character.theme.textColor);
   }, [character]);
 
-  // Keyboard navigation
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "ArrowRight") goTo(index + 1);
@@ -43,7 +39,6 @@ export default function CharacterSelectPage() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [index, goTo]);
 
-  // Preload neighboring artwork so left/right feels instant
   useEffect(() => {
     const n = characters.length;
     const neighbors = [characters[(index + 1) % n], characters[(index - 1 + n) % n]];
@@ -66,40 +61,32 @@ export default function CharacterSelectPage() {
   }
 
   return (
-    <div
-      className="relative h-[100dvh] w-full overflow-hidden transition-colors duration-700"
-      style={{ background: "var(--char-bg)" }}
-    >
+    <div className="h-[100dvh] w-full overflow-hidden flex flex-col bg-white text-black">
       <Navbar active="select" />
 
-      <div className="flex flex-col h-full">
-        <div className="grid flex-1 min-h-0 grid-cols-1 md:grid-cols-[minmax(260px,34%)_1fr] items-center gap-6 px-5 sm:px-12 pt-24 md:pt-28">
+      <div className="flex flex-col flex-1 min-h-0">
+        <div className="grid flex-1 min-h-0 grid-cols-1 md:grid-cols-[minmax(260px,34%)_1fr] items-center gap-6 px-5 sm:px-12 pt-4">
           {/* Info column */}
-          <div className="relative z-10 order-2 md:order-1">
+          <div className="order-2 md:order-1">
             <div className="flex items-center gap-2.5 text-[13px] mb-3.5" style={{ color: "var(--char-accent)" }}>
-              <span style={{ color: "rgba(243,241,236,0.62)" }}>
+              <span className="text-black/45">
                 {String(index + 1).padStart(2, "0")} / {String(characters.length).padStart(2, "0")}
               </span>
               <span className="w-8 h-px bg-current opacity-60" />
               ORIGINAL CHARACTER ROSTER
             </div>
-            <h1 className="font-display font-extrabold uppercase leading-[0.92] text-[clamp(38px,8vw,96px)] -tracking-[0.01em]">
+            <h1 className="font-display font-extrabold uppercase leading-[0.92] text-[clamp(34px,7vw,80px)] -tracking-[0.01em] text-black">
               {character.name}
             </h1>
             <p className="italic text-[15px] sm:text-lg mt-2.5 mb-5" style={{ color: "var(--char-accent)" }}>
               {character.title}
             </p>
-            <p className="max-w-[46ch] text-[15.5px] leading-relaxed mb-7" style={{ color: "rgba(243,241,236,0.62)" }}>
+            <p className="max-w-[46ch] text-[15.5px] leading-relaxed mb-7 text-black/60">
               {character.description}
             </p>
             <Link
               href={`/characters/${character.slug}`}
-              className="inline-block font-semibold text-sm tracking-wide px-6 py-3.5 rounded-sm transition-transform hover:-translate-y-0.5"
-              style={{
-                background: "var(--char-accent)",
-                color: "var(--char-bg)",
-                border: "1px solid var(--char-accent)",
-              }}
+              className="inline-block font-semibold text-sm tracking-wide px-6 py-3.5 rounded-sm border border-black text-black transition-colors hover:bg-black hover:text-white"
             >
               Explore Character
             </Link>
@@ -107,7 +94,7 @@ export default function CharacterSelectPage() {
 
           {/* Stage column */}
           <div
-            className="relative order-1 md:order-2 h-[40vh] md:h-full"
+            className="relative order-1 md:order-2 h-[36vh] md:h-full"
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
           >

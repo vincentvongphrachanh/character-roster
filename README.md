@@ -1,4 +1,4 @@
-# Roster — Original Character Portfolio
+# xmimiso — Original Character Portfolio
 
 A fighting-game-inspired character select experience for showcasing original
 character art. Built with Next.js (App Router), TypeScript, Tailwind CSS, and
@@ -18,19 +18,50 @@ Then open http://localhost:3000. Edit files under `app/`, `components/`, or
 
 ```
 app/
-  page.tsx                 → the character select screen
-  characters/[slug]/page.tsx → a single character's detail page
-  about/page.tsx
-  contact/page.tsx
+  page.tsx                    → the character select screen
+  characters/[slug]/page.tsx  → a single character's detail page
+  about/page.tsx              → bio + the contact form
+  illustrations/page.tsx      → standalone artwork gallery
   layout.tsx, globals.css
 components/
-  Navbar.tsx, CharacterStage.tsx, RosterStrip.tsx, GalleryLightbox.tsx
+  Navbar.tsx        → the site header (logo + nav, centered)
+  SocialIcons.tsx    → Instagram / VGen / Ko-fi / email icons
+  ContactForm.tsx    → the form on the About page
+  CharacterStage.tsx, RosterStrip.tsx, GalleryLightbox.tsx
 lib/
-  types.ts        → the Character type
-  characters.ts   → THE ROSTER — every character lives here
-public/characters/<slug>/ → artwork files for each character
-scripts/generate-placeholder-art.mjs → regenerates placeholder SVGs
+  types.ts            → the Character type
+  characters.ts        → THE ROSTER — every character lives here
+  illustrations.ts     → the standalone illustration gallery list
+  social-links.ts       → Instagram/VGen/Ko-fi/email URLs + contact form endpoint
+public/
+  brand/logo.svg        → placeholder logo — replace with the real one
+  characters/<slug>/     → artwork for each character
+  illustrations/          → artwork for the illustrations gallery
+scripts/
+  generate-placeholder-art.mjs, generate-illustration-placeholders.mjs
 ```
+
+## Adding the artist's real logo
+
+Replace `public/brand/logo.svg` with the real logo file. It can be a
+`.svg` or a `.png`/`.webp` with a transparent background — if you use
+a different filename or format, update the `src` in the `<Image>` tag
+inside `components/Navbar.tsx` to match. It renders at 72×72px in the
+header; a roughly square source image looks best.
+
+## Social / contact links
+
+Open `lib/social-links.ts` and fill in the four real URLs
+(Instagram, VGen, Ko-fi, email). Every icon across the whole site
+reads from this one file.
+
+The About page's contact form has no backend of its own (this is a
+static site), so by default it opens the visitor's email app with
+the message pre-filled. For a form that submits in-page with a
+"message sent" confirmation instead, sign up free at
+[formspree.io](https://formspree.io), create a form, and paste the
+endpoint URL it gives you into `contactFormEndpoint` in the same
+`lib/social-links.ts` file.
 
 ## Adding a new character
 
@@ -43,26 +74,31 @@ scripts/generate-placeholder-art.mjs → regenerates placeholder SVGs
    - `id`, `slug`, `name`, `title`, `description`
    - `displayMode`: `"full-body"`, `"bust"`, or `"portrait"`
    - `thumbnail` / `mainArtwork`: paths to the files you just added
-   - `theme`: pick a background, accent, secondary, and text color
-     for this character
+   - `theme.accentColor`: the one color used for this character (a
+     thin highlight, not a background — the site is white/black)
    - `gallery`: only fill in the categories you actually have art
      for — empty/omitted categories are automatically hidden
    - `lore` / `designNotes`: optional longer-form text
 4. Save. The new character appears in the roster, the select screen,
-   and gets its own page at `/characters/<slug>` automatically —
-   nothing else needs to change.
+   and gets its own page at `/characters/<slug>` automatically.
 
 To reorder characters, reorder the array. The first entry is what
 visitors see when the site loads.
 
+## Adding a new illustration
+
+Open `lib/illustrations.ts`, copy an existing entry, give it a new
+`id`, `name`, optional `note`, and an `image` path pointing at a file
+you've added under `public/illustrations/`. It appears in the grid
+on `/illustrations` automatically — no layout changes needed.
+
 ## Replacing the placeholder art
 
-Every image path in `lib/characters.ts` currently points at a
-generated placeholder SVG (see `scripts/generate-placeholder-art.mjs`).
-Replace the files in `public/characters/<slug>/` with real artwork of
-the same filenames (or update the paths in `lib/characters.ts` to
-match new filenames) — the layout, transitions, and gallery all adapt
-automatically to each image's real aspect ratio.
+Every image path in `lib/characters.ts` and `lib/illustrations.ts`
+currently points at a generated placeholder SVG. Replace the files
+in `public/` with real artwork of the same filenames (or update the
+paths to match new filenames) — the layout, transitions, and gallery
+all adapt automatically to each image's real aspect ratio.
 
 ## Deploying
 

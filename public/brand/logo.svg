@@ -1,0 +1,5 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder logo — replace with the artist's real logo">
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#141414" stroke-width="1.4" stroke-dasharray="4 5"/>
+  <text x="100" y="94" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#141414" opacity="0.55">YOUR LOGO</text>
+  <text x="100" y="112" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#141414" opacity="0.55">GOES HERE</text>
+</svg>

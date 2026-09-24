@@ -24,7 +24,7 @@ export default function GalleryLightbox({ character }: { character: Character })
     <>
       {populated.map((key) => (
         <div key={key} className="mb-9">
-          <h3 className="text-[12.5px] tracking-wide uppercase mb-3" style={{ color: "rgba(243,241,236,0.62)" }}>
+          <h3 className="text-[12.5px] tracking-wide uppercase mb-3 text-black/50">
             {galleryLabels[key]}
           </h3>
           <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))" }}>
@@ -32,8 +32,7 @@ export default function GalleryLightbox({ character }: { character: Character })
               <button
                 key={src}
                 onClick={() => setOpen({ src, alt: `${character.name} — ${galleryLabels[key]} ${i + 1}` })}
-                className="relative aspect-[3/4] rounded-[3px] overflow-hidden border cursor-zoom-in transition-colors"
-                style={{ borderColor: "rgba(243,241,236,0.14)", background: "var(--char-secondary)" }}
+                className="relative aspect-[3/4] rounded-[3px] overflow-hidden border border-black/10 hover:border-black/30 cursor-zoom-in transition-colors bg-black/[0.03]"
               >
                 <Image src={src} alt={`${character.name} ${galleryLabels[key]} ${i + 1}`} fill sizes="200px" className="object-cover" />
               </button>
@@ -50,8 +49,7 @@ export default function GalleryLightbox({ character }: { character: Character })
           <button
             onClick={() => setOpen(null)}
             aria-label="Close image"
-            className="absolute top-[calc(20px+env(safe-area-inset-top,0px))] right-5 w-10 h-10 rounded-full border flex items-center justify-center"
-            style={{ borderColor: "rgba(243,241,236,0.14)" }}
+            className="absolute top-[calc(20px+env(safe-area-inset-top,0px))] right-5 w-10 h-10 rounded-full border border-white/25 text-white flex items-center justify-center"
           >
             ✕
           </button>

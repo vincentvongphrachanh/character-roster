@@ -1,38 +1,46 @@
 import Link from "next/link";
+import Image from "next/image";
 import SocialIcons from "./SocialIcons";
 
-export type NavKey = "illustrations" | "select" | "about" | "contact";
+export type NavKey = "illustrations" | "select" | "about";
 
+/**
+ * Site header. Not fixed/floating -- it takes real space at the top
+ * of the page, the same way it does on sonialai.com. Swap
+ * /public/brand/logo.svg for the artist's real logo file (SVG or
+ * transparent PNG both work) and update the path below if the
+ * filename changes.
+ */
 export default function Navbar({ active }: { active: NavKey }) {
   const linkClass = (key: NavKey) =>
-    `text-[13px] tracking-wide pb-2 border-b transition-colors ${
+    `text-[13px] tracking-wide pb-1 border-b transition-colors ${
       active === key
-        ? "text-[var(--char-text)] border-[var(--char-accent)]"
-        : "text-[var(--char-text)]/60 border-transparent hover:text-[var(--char-text)]"
+        ? "text-black border-black"
+        : "text-black/50 border-transparent hover:text-black"
     }`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 sm:px-12 pt-[calc(env(safe-area-inset-top,0px)+16px)] pb-3.5 gap-4">
-      <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+    <header className="w-full bg-white text-black shrink-0">
+      <div className="flex items-center px-5 sm:px-12 pt-4">
         <SocialIcons />
-        <Link href="/" className="font-display font-extrabold text-xl whitespace-nowrap hidden sm:block">
-          ROSTER<span style={{ color: "var(--char-accent)" }}>.</span>
-        </Link>
       </div>
-      <div className="flex gap-3.5 sm:gap-8 shrink-0">
-        <Link href="/illustrations" className={linkClass("illustrations")}>
-          Illustrations
+      <div className="flex flex-col items-center pt-1 pb-4 px-5">
+        <Link href="/" className="flex flex-col items-center gap-2">
+          <Image src="/brand/logo.svg" alt="xmimiso logo" width={72} height={72} priority />
+          <span className="font-display font-bold text-sm tracking-[0.25em]">XMIMISO</span>
         </Link>
-        <Link href="/" className={linkClass("select")}>
-          Character Select
-        </Link>
-        <Link href="/about" className={linkClass("about")}>
-          About
-        </Link>
-        <Link href="/contact" className={linkClass("contact")}>
-          Contact
-        </Link>
+        <nav className="flex gap-5 sm:gap-9 mt-4">
+          <Link href="/illustrations" className={linkClass("illustrations")}>
+            Illustrations
+          </Link>
+          <Link href="/" className={linkClass("select")}>
+            Character Select
+          </Link>
+          <Link href="/about" className={linkClass("about")}>
+            About
+          </Link>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
