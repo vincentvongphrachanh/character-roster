@@ -8,10 +8,10 @@
  * ------------------------------------------------------------------
  */
 export const socialLinks = {
-  instagram: "https://instagram.com/xmimiso",
-  vgen: "https://vgen.co/xmimiso",
-  kofi: "https://ko-fi.com/xmimiso",
-  email: "mailto:xmimisox@gmail.com",
+  instagram: "https://instagram.com/your-handle",
+  vgen: "https://vgen.co/your-handle",
+  kofi: "https://ko-fi.com/your-handle",
+  email: "mailto:you@example.com",
 };
 
 /**

@@ -1,15 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
+import { logoHeight, logoSrc } from "@/lib/site";
 import SocialIcons from "./SocialIcons";
 
 export type NavKey = "illustrations" | "select" | "about";
 
 /**
- * Site header. Not fixed/floating -- it takes real space at the top
- * of the page, the same way it does on sonialai.com. Swap
- * /public/brand/logo.svg for the artist's real logo file (SVG or
- * transparent PNG both work) and update the path below if the
- * filename changes.
+ * Site header. The logo file and its size are set in lib/site.ts.
  */
 export default function Navbar({ active }: { active: NavKey }) {
   const linkClass = (key: NavKey) =>
@@ -26,7 +22,8 @@ export default function Navbar({ active }: { active: NavKey }) {
       </div>
       <div className="flex flex-col items-center pt-1 pb-4 px-5">
         <Link href="/" className="flex flex-col items-center gap-2">
-          <Image png="/brand/logosformii-03.png" alt="xmimiso logo" width={72} height={72} priority />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} alt="xmimiso logo" style={{ height: logoHeight, width: "auto" }} />
           <span className="font-display font-bold text-sm tracking-[0.25em]">XMIMISO</span>
         </Link>
         <nav className="flex gap-5 sm:gap-9 mt-4">

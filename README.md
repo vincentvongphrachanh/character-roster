@@ -33,8 +33,9 @@ lib/
   characters.ts        → THE ROSTER — every character lives here
   illustrations.ts     → the standalone illustration gallery list
   social-links.ts       → Instagram/VGen/Ko-fi/email URLs + contact form endpoint
+  site.ts               → logo file path and size
 public/
-  brand/logo.svg        → placeholder logo — replace with the real one
+  brand/logo.png        → placeholder logo — replace with the real one
   characters/<slug>/     → artwork for each character
   illustrations/          → artwork for the illustrations gallery
 scripts/
@@ -43,11 +44,17 @@ scripts/
 
 ## Adding the artist's real logo
 
-Replace `public/brand/logo.svg` with the real logo file. It can be a
-`.svg` or a `.png`/`.webp` with a transparent background — if you use
-a different filename or format, update the `src` in the `<Image>` tag
-inside `components/Navbar.tsx` to match. It renders at 72×72px in the
-header; a roughly square source image looks best.
+1. Name the logo file `logo.png` and put it in `public/brand/`,
+   replacing the placeholder that's there.
+2. That's it. If you'd rather keep a different filename, open
+   `lib/site.ts` and change `logoSrc` to match it exactly,
+   capital letters included.
+3. To make the logo bigger or smaller, change `logoHeight` in the
+   same file.
+
+On Windows, turn on File Explorer → View → Show → File name
+extensions, so you can see whether a file is really `logo.png` and
+not `logo.png.png`.
 
 ## Social / contact links
 
